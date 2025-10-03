@@ -10,6 +10,22 @@ What this project contains:
 - src/test/java/com/example/tests/TestRunner.java (JUnit5 runner that generates HTML report)
 
 Notes:
-- To run a single feature: mvn -X test -D"karate.options=classpath:features/users.feature"
 
-  
+**Running Tests**
+Run all tests: mvn clean test
+Run a specific feature (cmd): 
+mvn -X test -D"karate.options=classpath:features/users.feature"
+Run by tag: mvn test -D"karate.options=--tags @create"
+
+**Reports**
+After execution, Karate generates reports in:
+target/karate-reports/karate-summary.html
+target/surefire-reports/
+target/cucumber-html-reports/
+
+**Test**
+users.feature includes two example scenarios:
+1. Create a new employee entry with Name, Gender, Email and Status (active or inactive)
+2. Verify first user's status is active or inactive
+
+
